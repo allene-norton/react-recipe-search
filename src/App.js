@@ -14,6 +14,11 @@ function App() {
   const handleSearch = (e, term) => {
     e.preventDefault()
     setTerm(term)
+    e.target.reset()
+  }
+
+  const clearSearch = () => {
+    setData([])
   }
 
   useEffect(() => {
@@ -38,8 +43,8 @@ function App() {
 
   return (
     <div className="App">
-      <Search handleSearch={handleSearch} />
-      <Recipes data={data}/>
+      <Search handleSearch={handleSearch} clearSearch={clearSearch} />
+      <Recipes data={data} term={term} />
     </div>
   );
 }
