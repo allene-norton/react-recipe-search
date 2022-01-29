@@ -26,7 +26,7 @@ export default function Recipes (props) {
     return (
         
         <div>
-            {props.data.length > 0 ? <h1>{props.term.toUpperCase()}</h1> : <h1>Search For Recipes</h1>}
+            {props.data.length > 0 ? <h1>{props.term.toUpperCase()} RECIPES</h1> : <h1>Search For Recipes</h1>}
             <div className={classes.root}>
             <Grid container spacing={24} >
             {mapRecipes()}
