@@ -3,11 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles';
+import purple from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
+
+// import { theme } from './theme'
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: purple[500],
+    },
+    secondary: {
+      main: green[500],
+    },
+    
+  },
+});
 
 ReactDOM.render(
-  <React.StrictMode>
+  <div className='App'>
+    <ThemeProvider theme={theme}>
     <App />
-  </React.StrictMode>,
+    </ThemeProvider>
+  </div>,
   document.getElementById('root')
 );
 
